@@ -59,11 +59,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity1.cs" />
+    <Compile Include="AndroidAssetCollection.cs" />
+    <Compile Include="ExtensionFunctions.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="MainMenuScreen.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\SpriteFonts\DefaultSpriteFont.spritefont" />
+    <Content Include="Content\Sprites\UI\BarBackground.png" />
+    <Content Include="Content\Sprites\UI\BlueSliderDown.png" />
+    <Content Include="Content\Sprites\UI\Button.png" />
+    <Content Include="Content\Sprites\UI\ButtonHighlighted.png" />
+    <Content Include="Content\Sprites\UI\Cursor.png" />
+    <Content Include="Content\Sprites\UI\EmptyPanelBackground.png" />
+    <Content Include="Content\Sprites\UI\Logo.png" />
+    <Content Include="Content\Sprites\UI\Menu.png" />
+    <Content Include="Content\Sprites\UI\NarrowButton.png" />
+    <Content Include="Content\Sprites\UI\NarrowButtonHighlighted.png" />
+    <Content Include="Content\Sprites\UI\SliderBar.png" />
+    <Content Include="Content\Sprites\UI\TextEntryBox.png" />
+    <Content Include="Content\Effects\LightEffect.fx" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
@@ -87,6 +104,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CelesteEngine\CelesteEngineData\CelesteEngineData.csproj">
+      <Project>{7516016d-ef87-429a-adad-5c2061ed668b}</Project>
+      <Name>CelesteEngineData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CelesteEngine\CelesteEngine\CelesteEngine.csproj">
+      <Project>{b4c3c278-bc1c-49cd-82bf-76b93ef7f59d}</Project>
+      <Name>CelesteEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Data\Screens\LoadingScreen.xml" />
+    <Content Include="Content\Data\Screens\MainMenuScreen.xml" />
+    <Content Include="Content\Data\Screens\OptionsScreen.xml" />
+    <Content Include="Content\Data\Screens\StartupLogoScreen.xml" />
+    <Content Include="Content\SFX\UI\ButtonHover.wav" />
+    <Content Include="Content\SFX\UI\ButtonPressedSound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

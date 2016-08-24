@@ -1,6 +1,11 @@
+using CelesteEngine;
+using CelesteEngineData;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace TopDownShooter
 {
@@ -44,8 +49,9 @@ namespace TopDownShooter
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            
+            ScreenManager.Instance.Setup(this, spriteBatch, graphics, new AndroidAssetCollection());
+            ScreenManager.Instance.StartGame(new MainMenuScreen());
         }
 
         /// <summary>
@@ -64,10 +70,9 @@ namespace TopDownShooter
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                Exit();
-
-            // TODO: Add your update logic here
+            float elapsedGameTime = gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            ScreenManager.Instance.HandleInput(elapsedGameTime, Vector2.Zero);
+            ScreenManager.Instance.Update(elapsedGameTime);
 
             base.Update(gameTime);
         }
@@ -81,6 +86,7 @@ namespace TopDownShooter
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            ScreenManager.Instance.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }

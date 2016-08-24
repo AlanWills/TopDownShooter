@@ -1,0 +1,6 @@
+﻿<XnaContent>
+  <Asset Type="CelesteEngineData.BaseScreenData">
+    <BackgroundTextureAsset>UI\Logo</BackgroundTextureAsset>
+    <Music/>
+  </Asset>
+</XnaContent>
